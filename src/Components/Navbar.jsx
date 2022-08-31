@@ -50,7 +50,7 @@ const Navbar = (props) => {
     <>
       <div class="nav">
         <div class="nav-links">
-          <Link className='logo'  to='/'>Rem-Book</Link>
+          <Link className='logo'  to='/'>Remember-Book</Link>
           <Link  className='l-nav-button'to="/">Home</Link>
           <Link className='l-nav-button' to="/about">About</Link>
           </div>
