@@ -14,7 +14,7 @@ const Navbar = (props) => {
     <>
       <div class="nav">
         <div class="nav-links">
-          <Link className='logo'  to='/'>Rem-Book</Link>
+          <Link className='logo'  to='/'>Vastav</Link>
           <Link  className='l-nav-button'to="/">Home</Link>
           <Link className='l-nav-button' to="/about">About</Link>
           <Link className='l-nav-button' to="/land">Land</Link>
