@@ -31,9 +31,7 @@ export const Notes = (props) => {
     props.showAlert("Note Has Been Saved Successfully!","success")
 
   }
-// const condelete=()=>{
-// return  <Condelete
-// }
+
   const handleShow = (currentNote) => {
       setShow(true);
       // conDelete();
