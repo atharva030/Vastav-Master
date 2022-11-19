@@ -1,15 +1,15 @@
 import NoteContext from "./noteContext";
 import { useState } from "react";
-
 const NoteState = (props) => {
   const host = "https://atharva-jagdale.herokuapp.com";
   const initialState = [];
 
   const [notes, setNotes] = useState(initialState);
-
+  const [loader, setLoader] = useState(true);
 
   //Get All Notes
   const getNotes = async () => {
+    setLoader(true);
     const response = await fetch(
       `${host}/api/notes/fetchallnotes`,
       {
@@ -23,11 +23,12 @@ const NoteState = (props) => {
     );
     const json=await response.json()
     setNotes(json);
-//se
+    setLoader(false);
   };
 
   //Adding note
   const addNote = async (title, description, tag) => {
+    setLoader(true);
     const response = await fetch(
       `${host}/api/notes/addnote`,
       {
@@ -42,12 +43,14 @@ const NoteState = (props) => {
     );
    const note=await response.json();
     setNotes(notes.concat(note)); //concat returns an array whereas push updates an array
+    setLoader(false);
   };
 
 
   //Delete Note
   const deleteNote = async(id) => {
       //API Call
+      setLoader(true);
       const response = await fetch(
         `${host}/api/notes/deletenote/${id}`,
         {
@@ -64,13 +67,14 @@ const NoteState = (props) => {
       return note._id !== id;
     });
     setNotes(newNotes);
-    console.log(json);
+    setLoader(false);
   };
 
 
   //Edit Note
   const editNote = async (id, title, description,tag) => {
     //API Call
+    setLoader(true);
     const response = await fetch(
       `${host}/api/notes/updatenote/${id}`,
       {
@@ -84,7 +88,8 @@ const NoteState = (props) => {
       }
     );
     const json=response.json();
-   console.log(json);
+    setLoader(false);
+   
 
     // Logic for updating the edited content on frontend
    let newNotes=JSON.parse(JSON.stringify(notes))

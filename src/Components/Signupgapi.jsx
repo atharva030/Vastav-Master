@@ -48,6 +48,39 @@ const Login = (props) => {
       props.showAlert("Check Your Credentials!", "danger");
     }
   };
+  const [userinfo, setuserinfo] = useState({
+    name: "",
+    email:"",
+    authToken:""
+  });
+  const onSuccess = async (res) => {
+    const {name,email,authToken}=userinfo;
+    setuserinfo({name:res.profileObj.givenName,email:res.profileObj.email,authToken:res.tokenId})
+    const response = await fetch(`http://localhost:5000/api/auth/googlelogin`, {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: JSON.stringify({ name,email,authToken }), // body data type must match "Content-Type" header
+    });
+    const json = await response.json();
+
+    console.log(json);
+
+    if (json.success) {
+      //save auth-token and redirect
+      localStorage.setItem("token", res.tokenId);
+    } 
+  };
+  const onFailure = (res) => {
+    console.log("Login failed", res);
+  };
+
+  const logout = () => {
+    localStorage.removeItem('token');
+   console.log('jooo')
+  };
 
   return (
     <>
@@ -69,10 +102,11 @@ const Login = (props) => {
           <div className="modal-body-login">
             <div className="modal-subbody">
               <a href="#" style={{ textDecoration: "none" }}>
-                <button className="i-btn-grey" disabled>
+                <button className="i-btn-grey">
                   <BsGoogle />
                   Continue with Google
                 </button>
+                {/* <Google/> */}
               </a>
               <a href="#" style={{ textDecoration: "none" }}>
                 <button className="i-btn-grey">
@@ -80,13 +114,13 @@ const Login = (props) => {
                   Continue with Apple
                 </button>
               </a>
-              <Link to="/signin" style={{ textDecoration: "none" }}>
+              <Link to="/signform" style={{ textDecoration: "none" }}>
                 <button className="i-btn">Continue with Email</button>
               </Link>
             </div>
             <p className="small-btn">
-              By continuing , you agree to our{" "}
-              <a href="#">Terms and Condition</a> <br /> Read our
+              By continuing , you agree to our
+              <a href="#">Terms and Condition</a> <br /> Read our{" "}
               <a href=""> Privacy Policy.</a>
             </p>
           </div>
