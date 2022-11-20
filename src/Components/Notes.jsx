@@ -1,9 +1,6 @@
 import React, { useContext,useState, useEffect } from "react";
 import noteContext from "../Context/notes/noteContext";
 import NoteItem from "./NoteItem";
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form';
 import { useNavigate } from "react-router-dom";
 import '../Styles/Notes.css'
 import Spinner from "./Spinner";

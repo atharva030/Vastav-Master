@@ -4,11 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../Styles/newlogin.css";
 import { BsGoogle, BsApple } from "react-icons/bs";
-import Google from "./Google";
 const Login = (props) => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   let navigate = useNavigate();
-  const [loader, setLoader] = useState(false);
+  // const [loader, setLoader] = useState(false);
 
   const onchange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value }); //this is mainly use to reflect the change in words on frontend
@@ -19,7 +18,7 @@ const Login = (props) => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoader(true);
+    // setLoader(true);
     const response = await fetch(
       `https://atharva-jagdale.herokuapp.com/api/auth/login`,
       {
@@ -34,10 +33,10 @@ const Login = (props) => {
         }), // body data type must match "Content-Type" header
       }
     );
-    setLoader(false);
+    // setLoader(false);
 
     const json = await response.json();
-    setLoader(true);
+    // setLoader(true);
 
     if (json.success) {
       //save auth-token and redirect

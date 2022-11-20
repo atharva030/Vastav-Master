@@ -4,7 +4,7 @@ import loader from '../Images/Spinner.gif'
 const Spinner = () => {
   return (
     <div className="overlay-box">
-        <img src={loader} />
+        <img src={loader} alt="spinner"/>
     </div>
   )
 }
