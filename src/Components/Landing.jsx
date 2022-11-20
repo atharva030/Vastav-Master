@@ -1,6 +1,5 @@
 import React from "react";
-import "../Styles/Landing.css";
-import { useState, useEffect } from "react";
+import '../Styles/Landing.css'
 import Typewriter from "typewriter-effect";
 import { useNavigate } from "react-router-dom";
 
@@ -14,11 +13,6 @@ const Landing = () => {
       navigate("/signup");
     }
   };
-  const [state] = useState({
-    title: "HELLO",
-    title2: "HELLO bros",
-    title3: "HELLO brotheras",
-  });
 
   return (
     <div>
