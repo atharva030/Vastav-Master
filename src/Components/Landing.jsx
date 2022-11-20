@@ -21,7 +21,6 @@ const Landing = () => {
           <div className="content">
             <h1 className="text-big">We set your</h1>
             <h1 className="text-big">
-              {" "}
               <Typewriter
                 options={{
                   autoStart: true,
