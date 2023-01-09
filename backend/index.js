@@ -4,7 +4,7 @@ const mongoose=require('mongoose');
 const mongoURI="mongodb+srv://atharva_030:Pankhuri@mycluster.abdbwyo.mongodb.net/?retryWrites=true&w=majority"
 
 const app = express()
-const port = 5000
+const port = 5000 
 const connectionParams={
   useNewUrlParser:true,
   useUnifiedTopology:true
