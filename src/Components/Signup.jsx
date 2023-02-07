@@ -1,147 +1,9 @@
-// import React, { useState } from "react";
-// import "../Styles/login.css";
-// import { useNavigate } from "react-router-dom";
-// import { Link } from "react-router-dom";
-// import Spinner from "./Spinner";
-
-// const Signup = (props) => {
-//   let navigate = useNavigate();
-
-//   const [credentials, setCredentials] = useState({
-//     name: "",
-//     email: "",
-//     password: "",
-//     cpassword: "",
-//   });
-//   const handleClick=()=>{
-//     props.closeModal(false);
-//     navigate('/')
-//   }
-//   const [loader, setLoader] = useState(false);
-//   const onchange = (e) => {
-//     setCredentials({ ...credentials, [e.target.name]: e.target.value }); //this is mainly use to reflect the change in words on frontend
-//   };
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     if (credentials.password === credentials.cpassword) {
-//       const { name, email, password } = credentials;
-//       setLoader(true);
-//       const response = await fetch(
-//         `https://atharva-jagdale.herokuapp.com/api/auth/createuser`,
-//         {
-//           method: "POST", // *GET, POST, PUT, DELETE, etc.
-//           headers: {
-//             "Content-Type": "application/json",
-//             // 'Content-Type': 'application/x-www-form-urlencoded',
-//           },
-//           body: JSON.stringify({ name, email, password }), // body data type must match "Content-Type" header
-//         }
-//       );
-//       const json = await response.json();
-//       setLoader(false);
-//       console.log(json);
-//       if (json.success) {
-//         e.preventDefault();
-//         // props.showAlert("Account Created Successfully!!", "success");
-//         navigate("/login");
-//       }
-//       // } else {
-//       //   props.showAlert("Invalid Credentials", "danger");
-//       // }
-//     }
-//     // } else {
-//     //   props.showAlert(
-//     //     "Confirm Password must be same as the password",
-//     //     "danger"
-//     //   );
-//   };
-
-//   return (
-//     <>
-//     <div className="modal-background">
-//       <form className="signup-form" onSubmit={handleSubmit}>
-//         <h3>Create Your Account</h3>
-//         <div className={loader ? "parentDisable" : "display"}>
-//           <Spinner />
-//         </div>
-//         <button
-//           onClick={handleClick}
-//         >
-//           X
-//         </button>
-//         <label htmlFor="name">Full Name</label>
-//         <input
-//           type="text"
-//           value={credentials.name}
-//           name="name"
-//           id="name"
-//           onChange={onchange}
-//           placeholder="Enter Your Name"
-//           required
-//         />
-
-//         <label htmlFor="email">Email address</label>
-//         <input
-//           type="email"
-//           placeholder="Enter your email"
-//           value={credentials.email}
-//           id="email"
-//           name="email"
-//           onChange={onchange}
-//           required
-//         />
-
-//         <label htmlFor="password">Password</label>
-//         <input
-//           type="password"
-//           placeholder="Enter your Password"
-//           value={credentials.password}
-//           minLength={5}
-//           id="password"
-//           name="password"
-//           onChange={onchange}
-//           required
-//         />
-
-//         <label htmlFor="password">Confirm Password</label>
-//         <input
-//           type="password"
-//           name="cpassword"
-//           value={credentials.cpassword}
-//           onChange={onchange}
-//           minLength={5}
-//           placeholder="Confirm your Password"
-//           id="cpassword"
-//           required
-//         />
-
-//         <div style={{ margin: "18px 0 0 66px" }}>
-//           {" "}
-//           Already have an Account? <Link to="/login">Login</Link>{" "}
-//         </div>
-//         <button className="login-button">Sign Up</button>
-//         <div className="social">
-//           <div className="go">
-//             <i className="fab fa-google"></i>Google
-//           </div>
-//           <div className="fb">
-//             <i className="fab fa-facebook"></i>Facebook
-//           </div>
-//         </div>
-//       </form>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Signup;
-
 import React, { useState } from "react";
 import "../Styles/login.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../Styles/newlogin.css";
-import Spinner from './Spinner'
+import Spinner from "./Spinner";
 
 const Login = (props) => {
   const [credentials, setCredentials] = useState({
@@ -162,7 +24,7 @@ const Login = (props) => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const {name,email,password,cpassword}=credentials
+    const { name, email, password, cpassword } = credentials;
     setLoader(true);
     const response = await fetch(
       `https://atharva-jagdale.herokuapp.com/api/auth/createuser`,
@@ -196,7 +58,7 @@ const Login = (props) => {
 
   return (
     <>
-{loader && <Spinner/>}
+      {loader && <Spinner />}
       <div className="modal-background">
         <div className="form-modal">
           <div className="modal-title">
@@ -229,7 +91,7 @@ const Login = (props) => {
                   name="email"
                   id="email"
                   placeholder="Email"
-                  onChange={onchange} 
+                  onChange={onchange}
                   required
                 />
                 <input
