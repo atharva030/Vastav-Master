@@ -14,7 +14,7 @@ const Login = (props) => {
     };
     const handleClick = () => {
       props.closeModal(false);
-      navigate("/");
+      navigate("/"); 
     };
     const handleSubmit = async (e) => {
       e.preventDefault();
