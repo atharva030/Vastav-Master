@@ -1,7 +1,7 @@
 const express=require('express')
 var cors=require('cors')
 const mongoose=require('mongoose');
-const mongoURI="mongodb+srv://atharva_030:Pankhuri@mycluster.abdbwyo.mongodb.net/?retryWrites=true&w=majority"
+const mongoURI="mongodb+srv://atharva_030:atharva@mycluster.abdbwyo.mongodb.net/?retryWrites=true&w=majority"
 
 const app = express()
 const port = 5000 
