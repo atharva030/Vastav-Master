@@ -151,7 +151,7 @@ router.post(
   }
 );
 //ROUTE 3: Get logged in user using: POST "/api/auth/getuser" Dosen't require auth i.e. no login required
-router.post("/getuser", fetchuser, async (req, res) => {
+router.post("/getuser", async (req, res) => {
   try {
     userId = req.user.id; //this will take the info from the fetch.js
     const user = await User.findById(userId).select("-password");

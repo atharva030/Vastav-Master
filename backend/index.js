@@ -15,7 +15,7 @@ app.use(express.json());
 app.use('/',require('./routes/auth'))
 // app.use('/api/auth',require('./routes/auth'))
 // app.use('/api/notes',require('./routes/notes'))
-  
+mongoose.set("strictQuery", false);
 mongoose.connect(mongoURI,connectionParams).then(()=>{
     console.info("connected")
 }).catch((error)=>{

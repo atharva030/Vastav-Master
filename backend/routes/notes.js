@@ -5,7 +5,7 @@ const Note = require("../models/Note");
 const { body, validationResult } = require("express-validator");
 
 //ROUTE 1: Get all the notes using: GET "/api/notes/fetchallnotes"  require auth i.e. login required
-router.get("/fetchallnotes", fetchuser, async (req, res) => {
+router.get("/fetchallnotes",  async (req, res) => {
   const notes = await Note.find({ user: req.user.id }); //fetching all notes
   res.json(notes);
 });
@@ -46,7 +46,7 @@ router.post("/addnote",
 
 //ROUTE 3:Update an existing Note using: PUT "/api/notes/updatenote".Login Required
 //Commonly put is used for the updation
-router.put("/updatenote/:id",fetchuser, async (req, res) => {
+router.put("/updatenote/:id",async (req, res) => {
  const {title,description,tag}=req.body;//taking parameters from the body
     const newNote={}; //new object created
     if(title){
@@ -81,7 +81,7 @@ router.put("/updatenote/:id",fetchuser, async (req, res) => {
 
 //ROUTE 4:Delete an existing Note using: DELETE "/api/notes/deletenote".Login Required
 //Commonly delete is used for the deletion
-router.delete("/deletenote/:id",fetchuser, async (req, res) => {
+router.delete("/deletenote/:id", async (req, res) => {
   try {
     //find the note to be deleted and delete it
     let note=await Note.findById(req.params.id);  //fetching Note using id and req.params.id gives "id"
