@@ -12,8 +12,9 @@ const connectionParams={
 app.use(cors())
 app.use(express.json());
 //Available Routes
-app.use('/api/auth',require('./routes/auth'))
-app.use('/api/notes',require('./routes/notes'))
+app.use('/',require('./routes/auth'))
+// app.use('/api/auth',require('./routes/auth'))
+// app.use('/api/notes',require('./routes/notes'))
   
 mongoose.connect(mongoURI,connectionParams).then(()=>{
     console.info("connected")
