@@ -21,7 +21,7 @@ const Login = (props) => {
     e.preventDefault();
     setLoader(true);
     const response = await fetch(
-      `https://atharva-jagdale.herokuapp.com/api/auth/login`,
+      `https://vastavserver.vercel.app/api/auth/login`,
       {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         headers: {
