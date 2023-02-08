@@ -5,7 +5,7 @@ var jwt = require("jsonwebtoken");
 const fetchuser = require("../middleware/fetchuser");
 const router = express.Router();
 const { body, validationResult } = require("express-validator");
-const jwtSecretKey = "atharva$$!oy";
+const jwtSecretKey ="(*$&(&@()(NDKNJ"| "atharva$$!oy";
 
 // ROUTE 1: create user using: POST "/api/auth/createuser" Dosen't require auth i.e. no login required
 router.post(
