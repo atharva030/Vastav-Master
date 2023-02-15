@@ -31,7 +31,7 @@ const Login = (props) => {
           email: credentials.email,
           password: credentials.password,
         }), // body data type must match "Content-Type" header
-      }
+      } 
     );
     // setLoader(false);
 
