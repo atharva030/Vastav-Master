@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../Styles/newlogin.css";
 import { BsGoogle, BsApple } from "react-icons/bs";
-import Google from "./Google";
 const Login = (props) => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   let navigate = useNavigate();

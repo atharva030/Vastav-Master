@@ -11,22 +11,11 @@ import Loginapi from "./Components/Signupgapi";
 import Signin from "./Components/Signin";
 import Signup from "./Components/Signup";
 import Landing from "./Components/Landing";
-import Google from "./Components/Google";
 import { useEffect } from "react";
 import { gapi } from "gapi-script";
 function App() {
   const [alert, setAlert] = useState(null);
   const [openModal, setopenModal] = useState(false);
-  useEffect(() => {
-    function start() {
-      gapi.client.init({
-        clientId:
-          "975787396973-okldj0fgsgrsn8qr38eee9k83plppifg.apps.googleusercontent.com",
-        scope: "",
-      });
-    }
-    gapi.load("client:auth2", start);
-  });
 
   const showAlert = (message, type) => {
     setAlert({
@@ -88,7 +77,6 @@ function App() {
           </div>
         </Router>
       </NoteState>
-      {/* <Google/> */}
     </>
   );
 }
