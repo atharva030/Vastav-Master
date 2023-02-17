@@ -1,5 +1,5 @@
 var jwt = require("jsonwebtoken");
-const jwtSecretKey = process.env.JWT_SECRET_KEY || "atharva$$!oy";
+const jwtSecretKey ="(*$&(&@()(NDKNJ"| "atharva$$!oy";
 
 const fetchuser=(req,res,next)=>{
     //get user from JWT_TOKEN   
