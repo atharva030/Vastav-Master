@@ -18,7 +18,7 @@ const Navbar = ({ openModal }) => {
         <div className="leftnav-box">
           <div className="nav-links">
             <Link className="logo" to="/">
-              Vastav
+              Vatsav
             </Link>
           </div>
           <div className="nav-flex-text-image">
