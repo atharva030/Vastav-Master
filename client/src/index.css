@@ -160,3 +160,6 @@ i {
   line-height: 35px !important;
 }
 }
+body::-webkit-scrollbar{
+  display: none;
+}
