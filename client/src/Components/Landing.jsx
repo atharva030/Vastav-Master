@@ -1,5 +1,5 @@
 import React from "react";
-import '../Styles/Landing.css'
+import "../Styles/Landing.css";
 import Typewriter from "typewriter-effect";
 import { useNavigate } from "react-router-dom";
 

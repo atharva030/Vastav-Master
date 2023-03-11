@@ -3,10 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "../Styles/navbar.css";
 import Navgif from "../Images/navgif.gif";
-import { GiHamburgerMenu} from "react-icons/gi";
-import { IoClose} from "react-icons/io5";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoClose } from "react-icons/io5";
 const Navbar = ({ openModal }) => {
-  const [isMobile, setIsMobile] = useState(false)
+  const [isMobile, setIsMobile] = useState(false);
   let navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -64,21 +64,33 @@ const Navbar = ({ openModal }) => {
         </div>
       </div>
 
-
       {/* This is sidebar */}
-      <div className={isMobile?"mobile":"mob-main-box"}>
-      <div className="mob-nav">
-     
-          <Link id="nav-one-color" className="mob-l-nav-button" to="/" onClick={()=>setIsMobile(false)}>
+      <div className={isMobile ? "mobile" : "mob-main-box"}>
+        <div className="mob-nav">
+          <Link
+            id="nav-one-color"
+            className="mob-l-nav-button"
+            to="/"
+            onClick={() => setIsMobile(false)}
+          >
             Home
           </Link>
-          <Link id="nav-two-color" className="mob-l-nav-button" to="/notes" onClick={()=>setIsMobile(false)}>
+          <Link
+            id="nav-two-color"
+            className="mob-l-nav-button"
+            to="/notes"
+            onClick={() => setIsMobile(false)}
+          >
             Notes
           </Link>
           {!localStorage.getItem("token") ? (
             <div className="mob-right-button">
               <div id="mob-nav-account">Accounts</div>
-              <Link className="mob-btn-back" to="/signup" onClick={()=>setIsMobile(false)}>
+              <Link
+                className="mob-btn-back"
+                to="/signup"
+                onClick={() => setIsMobile(false)}
+              >
                 Sign Up
               </Link>
               <Link
@@ -98,9 +110,12 @@ const Navbar = ({ openModal }) => {
           )}
         </div>
       </div>
-      <button className="mobile-menu-icon" onClick={()=>setIsMobile(!isMobile)}>
-      {!isMobile? <GiHamburgerMenu size={30}/>:<IoClose size={30}/>}
-    </button>
+      <button
+        className="mobile-menu-icon"
+        onClick={() => setIsMobile(!isMobile)}
+      >
+        {!isMobile ? <GiHamburgerMenu size={30} /> : <IoClose size={30} />}
+      </button>
     </>
   );
 };

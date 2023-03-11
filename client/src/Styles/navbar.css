@@ -13,19 +13,18 @@
   box-shadow: rgb(0 0 0 / 8%) 0 1px;
   align-items: center;
   padding: 2px 0 0;
-  
 }
 .nav-flex-text-image {
   display: flex;
-    align-items: center;
-    margin-left: 9rem;
+  align-items: center;
+  margin-left: 9rem;
 }
-.leftnav-box{
+.leftnav-box {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
-.rightnav-box{
+.rightnav-box {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -129,7 +128,7 @@
   overflow: hidden;
   z-index: 1;
 }
-.l-nav-button:hover{
+.l-nav-button:hover {
   color: #0850bc;
 }
 .nav > .nav-links > a {
@@ -229,7 +228,7 @@
 }
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
-.mobile{
+.mobile {
   display: block !important;
   height: 100%;
   width: 100%;
@@ -237,66 +236,63 @@
   position: fixed;
   background-color: rgba(17, 21, 24, 0.45);
 }
-.mob-main-box{
+.mob-main-box {
   display: none;
-
 }
-#nav-one-color{
-  color: #18D39E;
+#nav-one-color {
+  color: #18d39e;
   font-size: 22px;
-  font-variation-settings: 'wght' 700;
+  font-variation-settings: "wght" 700;
 }
-#nav-two-color{
-  color: #8E34F7;
+#nav-two-color {
+  color: #8e34f7;
   font-size: 22px;
-    font-variation-settings: 'wght' 700;
+  font-variation-settings: "wght" 700;
 }
-#mob-nav-account{
+#mob-nav-account {
   color: #b1b0b5;
-    text-transform: uppercase;
-    font-variation-settings: 'wght' 800;
-    font-size: 14px;
-    margin-bottom: 6px;
-
+  text-transform: uppercase;
+  font-variation-settings: "wght" 800;
+  font-size: 14px;
+  margin-bottom: 6px;
 }
 .mob-nav {
-   /* transform: translate3d(-100%, 0, 0); */
-   background: white;
-   position: fixed;
-   height: 100%;
-   top: 0;
-   left: 0;
-   overflow: auto;
-   padding: 20px 30px;
-   transition: all 0.3s cubic-bezier(0.6, 0.4, 0, 1);
-   max-width: 233px;
-   width: calc(100% - 50px);
+  /* transform: translate3d(-100%, 0, 0); */
+  background: white;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  padding: 20px 30px;
+  transition: all 0.3s cubic-bezier(0.6, 0.4, 0, 1);
+  max-width: 233px;
+  width: calc(100% - 50px);
 
   font-family: "Inter", sans-serif;
-  
 }
 
 .mob-nav-flex-text-image {
   display: flex;
-    align-items: center;
+  align-items: center;
 }
-.mob-leftnav-box{
+.mob-leftnav-box {
   margin-top: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
-.mob.right-button{
+.mob.right-button {
   margin-top: 29rem;
 }
-.mob-rightnav-box{
+.mob-rightnav-box {
   display: flex;
   margin-top: 3rem;
   flex-direction: column;
   justify-content: space-evenly;
   margin-left: 48px;
 }
-.mob-right-button{
+.mob-right-button {
   margin-top: 29rem;
 }
 .mob-btn-back {
@@ -307,7 +303,7 @@
   padding: 12px 0;
   line-height: 1.3em;
   cursor: pointer;
-  font-variation-settings: 'wght' 500;
+  font-variation-settings: "wght" 500;
 }
 .mob-vl {
   border-left: 1px solid #d6cfcf;
@@ -320,8 +316,8 @@
 }
 .mob-nav-btn-box {
   display: flex;
-   flex-direction: column;
-   margin-top: 15rem;
+  flex-direction: column;
+  margin-top: 15rem;
 }
 .mob-nav > .nav-header > .nav-title {
   display: inline-block;
@@ -351,7 +347,7 @@
   padding: 12px 0;
   line-height: 1.3em;
   cursor: pointer;
-  font-variation-settings: 'wght' 500;
+  font-variation-settings: "wght" 500;
 }
 .mob-logout {
   background-color: #005ce6;
@@ -384,7 +380,6 @@
   padding: 12px 0;
   line-height: 1.3em;
   cursor: pointer;
-
 }
 .mob-nav > .nav-links > a {
   display: inline-block;

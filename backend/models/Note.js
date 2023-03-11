@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
-const {Schema}=mongoose;
+const { Schema } = mongoose;
 const NotesSchema = new Schema({
-  user:{ //this will store the user
-    type:mongoose.Schema.Types.ObjectId,
-    ref:'user'
+  user: {
+    //this will store the user
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "user",
   },
   title: {
     type: String,
@@ -12,11 +13,10 @@ const NotesSchema = new Schema({
   description: {
     type: String,
     require: true,
-
   },
   tag: {
     type: String,
-    default:"General"
+    default: "General",
   },
 
   date: {
