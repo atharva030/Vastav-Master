@@ -5,7 +5,8 @@ var jwt = require("jsonwebtoken");
 const fetchuser = require("../middleware/fetchuser");
 const router = express.Router();
 const { body, validationResult } = require("express-validator");
-const jwtSecretKey ="(*$&(&@()(NDKNJ"| "atharva$$!oy";
+const jwtSecretKey = process.env.JWT_SECRET;
+
 // ROUTE 1: create user using: POST "/api/auth/createuser" Dosen't require auth i.e. no login required
 router.post(
   "/createuser",
@@ -126,12 +127,10 @@ router.post(
       const passswordCompare = await bcrypt.compare(password, user.password); //this will match hashes internally
       if (!passswordCompare) {
         success = false;
-        return res
-          .status(400)
-          .json({
-            success,
-            error: "Please try to login with correct Credential",
-          });
+        return res.status(400).json({
+          success,
+          error: "Please try to login with correct Credential",
+        });
       }
       //This data will be stored in token
       const data = {
@@ -150,7 +149,7 @@ router.post(
   }
 );
 //ROUTE 3: Get logged in user using: POST "/api/auth/getuser" Dosen't require auth i.e. no login required
-router.post("/getuser", fetchuser, async (req, res) => {
+router.get("/getuser", fetchuser, async (req, res) => {
   try {
     userId = req.user.id; //this will take the info from the fetch.js
     const user = await User.findById(userId).select("-password");

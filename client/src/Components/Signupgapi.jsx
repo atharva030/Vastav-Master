@@ -31,7 +31,7 @@ const Login = (props) => {
           email: credentials.email,
           password: credentials.password,
         }), // body data type must match "Content-Type" header
-      } 
+      }
     );
     // setLoader(false);
 
@@ -49,19 +49,23 @@ const Login = (props) => {
   };
   const [userinfo, setuserinfo] = useState({
     name: "",
-    email:"",
-    authToken:""
+    email: "",
+    authToken: "",
   });
   const onSuccess = async (res) => {
-    const {name,email,authToken}=userinfo;
-    setuserinfo({name:res.profileObj.givenName,email:res.profileObj.email,authToken:res.tokenId})
+    const { name, email, authToken } = userinfo;
+    setuserinfo({
+      name: res.profileObj.givenName,
+      email: res.profileObj.email,
+      authToken: res.tokenId,
+    });
     const response = await fetch(`http://localhost:5000/api/auth/googlelogin`, {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: JSON.stringify({ name,email,authToken }), // body data type must match "Content-Type" header
+      body: JSON.stringify({ name, email, authToken }), // body data type must match "Content-Type" header
     });
     const json = await response.json();
 
@@ -70,15 +74,15 @@ const Login = (props) => {
     if (json.success) {
       //save auth-token and redirect
       localStorage.setItem("token", res.tokenId);
-    } 
+    }
   };
   const onFailure = (res) => {
     console.log("Login failed", res);
   };
 
   const logout = () => {
-    localStorage.removeItem('token');
-   console.log('jooo')
+    localStorage.removeItem("token");
+    console.log("jooo");
   };
 
   return (

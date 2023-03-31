@@ -3,53 +3,53 @@ import "../Styles/login.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../Styles/newlogin.css";
-import Spinner from './Spinner'
+import Spinner from "./Spinner";
 const Login = (props) => {
-    const [credentials, setCredentials] = useState({ email: "", password: "" });
-    let navigate = useNavigate();
-    const [loader, setLoader] = useState(false);
-  
-    const onchange = (e) => {
-      setCredentials({ ...credentials, [e.target.name]: e.target.value }); //this is mainly use to reflect the change in words on frontend
-    };
-    const handleClick = () => {
-      props.closeModal(false);
-      navigate("/"); 
-    };
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      setLoader(true);
-      const response = await fetch(
-        `https://vastavserver.vercel.app/api/auth/login`,
-        {
-          method: "POST", // *GET, POST, PUT, DELETE, etc.
-          headers: {
-            "Content-Type": "application/json",
-            // 'Content-Type': 'application/x-www-form-urlencoded',
-          },
-          body: JSON.stringify({
-            email: credentials.email,
-            password: credentials.password,
-          }), // body data type must match "Content-Type" header
-        }
-      );
-  
-      const json = await response.json();
-      setLoader(false);
-  
-      if (json.success) {
-        //save auth-token and redirect
-        localStorage.setItem("token", json.authToken);
-        props.showAlert("You are successfully Logged in!", "success");
-        navigate("/");
-      } else {
-        props.showAlert("Check Your Credentials!", "danger");
+  const [credentials, setCredentials] = useState({ email: "", password: "" });
+  let navigate = useNavigate();
+  const [loader, setLoader] = useState(false);
+
+  const onchange = (e) => {
+    setCredentials({ ...credentials, [e.target.name]: e.target.value }); //this is mainly use to reflect the change in words on frontend
+  };
+  const handleClick = () => {
+    props.closeModal(false);
+    navigate("/");
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoader(true);
+    const response = await fetch(
+      `https://vastavserver.vercel.app/api/auth/login`,
+      {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          "Content-Type": "application/json",
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: JSON.stringify({
+          email: credentials.email,
+          password: credentials.password,
+        }), // body data type must match "Content-Type" header
       }
-    };
-  
+    );
+
+    const json = await response.json();
+    setLoader(false);
+
+    if (json.success) {
+      //save auth-token and redirect
+      localStorage.setItem("token", json.authToken);
+      props.showAlert("You are successfully Logged in!", "success");
+      navigate("/");
+    } else {
+      props.showAlert("Check Your Credentials!", "danger");
+    }
+  };
+
   return (
     <>
-{loader && <Spinner/>}
+      {loader && <Spinner />}
       <div className="modal-background">
         <div className="form-modal">
           <div className="modal-title">
@@ -65,7 +65,6 @@ const Login = (props) => {
           <div className="modal-body">
             <div className="modal-subbody">
               <form onSubmit={handleSubmit}>
-           
                 <input
                   type="email"
                   className="form-input"
@@ -73,7 +72,7 @@ const Login = (props) => {
                   name="email"
                   id="email"
                   placeholder="Email"
-                  onChange={onchange} 
+                  onChange={onchange}
                 />
                 <input
                   type="password"
@@ -84,7 +83,7 @@ const Login = (props) => {
                   placeholder="Password"
                   onChange={onchange}
                 />
-              
+
                 <button className="submit-btn">Sign In</button>
               </form>
             </div>
