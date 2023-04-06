@@ -27,7 +27,7 @@ const Login = (props) => {
     const { name, email, password, cpassword } = credentials;
     setLoader(true);
     const response = await fetch(
-      `https://vastavserver.vercel.app/api/auth/createuser`,
+      `http://localhost:5000/api/auth/createuser`,
       {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         headers: {

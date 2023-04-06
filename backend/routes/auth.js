@@ -5,7 +5,7 @@ var jwt = require("jsonwebtoken");
 const fetchuser = require("../middleware/fetchuser");
 const router = express.Router();
 const { body, validationResult } = require("express-validator");
-const jwtSecretKey = process.env.JWT_SECRET;
+const jwtSecretKey = process.env.JWT_SECRET_KEY || "atharva$$!oy";
 
 // ROUTE 1: create user using: POST "/api/auth/createuser" Dosen't require auth i.e. no login required
 router.post(
@@ -54,7 +54,7 @@ router.post(
           id: user.id,
         },
       };
-      const authToken = jwt.sign(data, "shhhhh"); //shhhhh is a JWT_SECRET
+      const authToken = jwt.sign(data, "atharva$$!oy"); //shhhhh is a JWT_SECRET
 
       success = true;
       res.json({ success, authToken });
@@ -149,7 +149,7 @@ router.post(
   }
 );
 //ROUTE 3: Get logged in user using: POST "/api/auth/getuser" Dosen't require auth i.e. no login required
-router.get("/getuser", fetchuser, async (req, res) => {
+router.post("/getuser", fetchuser, async (req, res) => {
   try {
     userId = req.user.id; //this will take the info from the fetch.js
     const user = await User.findById(userId).select("-password");

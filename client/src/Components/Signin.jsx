@@ -20,7 +20,7 @@ const Login = (props) => {
     e.preventDefault();
     setLoader(true);
     const response = await fetch(
-      `https://vastavserver.vercel.app/api/auth/login`,
+      `http://localhost:5000/api/auth/login`,
       {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         headers: {
