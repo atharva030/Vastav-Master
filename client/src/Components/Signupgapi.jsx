@@ -20,7 +20,7 @@ const Login = (props) => {
     e.preventDefault();
     // setLoader(true);
     const response = await fetch(
-      `http://localhost:5000/api/auth/login`,
+      `https://vastavserver.vercel.app/api/auth/login`,
       {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         headers: {
@@ -59,7 +59,7 @@ const Login = (props) => {
       email: res.profileObj.email,
       authToken: res.tokenId,
     });
-    const response = await fetch(`http://localhost:5000/api/auth/googlelogin`, {
+    const response = await fetch(`https://vastavserver.vercel.app/api/auth/googlelogin`, {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",
