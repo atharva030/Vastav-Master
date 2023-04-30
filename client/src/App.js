@@ -11,9 +11,7 @@ import Loginapi from "./Components/Signupgapi";
 import Signin from "./Components/Signin";
 import Signup from "./Components/Signup";
 import Landing from "./Components/Landing";
-import { useEffect } from "react";
-import { gapi } from "gapi-script";
-import Footer from "./Components/Footer";
+
 function App() {
   const [alert, setAlert] = useState(null);
   const [openModal, setopenModal] = useState(false);
