@@ -10,7 +10,30 @@
   width: 50vw;
 }
 /* Remove extra left and right margins, due to padding */
-
+.modal{
+  background: rgba(17, 21, 24, 0.45);
+    height: 100vh;
+    width: 100vw;
+}
+.input-flex{
+  display: flex;
+  flex-direction: column;
+}
+.modal-content{
+  background-color: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 55%;
+  left: 50%;
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  padding: 24px;
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  height: 249px;
+  width: 281px;
+}
 /* Responsive columns */
 @media screen and (max-width: 600px) {
   .column {
@@ -25,11 +48,11 @@
 /* Style the counter cards */
 .card {
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-  padding: 16px;
+  padding: 5px;
   text-align: center;
   background-color: #f1f1f1;
   margin-top: 33px;
-  height: 256px;
+  height: 165px;
   /* margin: 0 12px; */
-  width: 46rem;
+  width: 38rem;
 }

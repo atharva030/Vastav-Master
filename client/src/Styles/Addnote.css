@@ -11,6 +11,7 @@
   margin: 142px 105px;
   border-radius: 17px;
   border: 2px dashed rgba(114, 186, 94, 0.35);
+  z-index: -1;
 }
 .wrapper h3 {
   text-align: center;

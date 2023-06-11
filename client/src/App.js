@@ -5,13 +5,12 @@ import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
 import About from "./Components/About";
 import NoteState from "./Context/notes/noteState";
-import Alert from "./Components/Alert";
 import Login from "./Components/Login";
 import Loginapi from "./Components/Signupgapi";
 import Signin from "./Components/Signin";
 import Signup from "./Components/Signup";
 import Landing from "./Components/Landing";
-
+import Alert from "./Alert";
 function App() {
   const [alert, setAlert] = useState(null);
   const [openModal, setopenModal] = useState(false);

@@ -2,15 +2,19 @@ import React, { useContext } from "react";
 import noteContext from "../Context/notes/noteContext";
 import { MdModeEdit, MdDelete } from "react-icons/md";
 import "../Styles/Addnote.css";
+import { useState } from "react";
 const NoteItem = (props) => {
   const context = useContext(noteContext); //using useContext
   const { deleteNote } = context; //taking deleteNote function from notestate
   const { note, handleShow } = props;
+
   return (
+    <>
+  
     <div className="note-item-container">
-      <div class="row-item">
-        <div class="column">
-          <div class="card">
+      <div className="row-item">
+        <div className="column">
+          <div className="card">
             <h1>{note.title}</h1>
             <p>{note.description}</p>
             <p>{note.id}</p>
@@ -22,14 +26,13 @@ const NoteItem = (props) => {
               }}
             ></MdDelete>
             <MdModeEdit
-              onClick={() => {
-                handleShow(note);
-              }}
+              onClick={handleShow}
             ></MdModeEdit>
           </div>
         </div>
       </div>
     </div>
+    </>
   );
 };
 
