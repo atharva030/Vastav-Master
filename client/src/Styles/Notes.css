@@ -11,13 +11,18 @@
 }
 /* Remove extra left and right margins, due to padding */
 .modal{
-  background: rgba(17, 21, 24, 0.45);
+  /* background: rgba(17, 21, 24, 0.45); */
     height: 100vh;
     width: 100vw;
 }
 .input-flex{
   display: flex;
   flex-direction: column;
+}
+.h1style{
+      /* margin-left: 43rem; */
+      margin-top: 63px;
+      text-align: center;
 }
 .modal-content{
   background-color: white;
@@ -51,8 +56,7 @@
   padding: 5px;
   text-align: center;
   background-color: #f1f1f1;
-  margin-top: 33px;
   height: 165px;
-  /* margin: 0 12px; */
   width: 38rem;
+  margin-bottom: 11px;
 }

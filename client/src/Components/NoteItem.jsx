@@ -3,14 +3,18 @@ import noteContext from "../Context/notes/noteContext";
 import { MdModeEdit, MdDelete } from "react-icons/md";
 import "../Styles/Addnote.css";
 import { useState } from "react";
+
 const NoteItem = (props) => {
-  const context = useContext(noteContext); //using useContext
-  const { deleteNote } = context; //taking deleteNote function from notestate
+  const context = useContext(noteContext);
+  const { deleteNote } = context;
   const { note, handleShow } = props;
 
+  const handleEdit = () => {
+    console.log("called")
+    handleShow(note);
+  };
+
   return (
-    <>
-  
     <div className="note-item-container">
       <div className="row-item">
         <div className="column">
@@ -22,17 +26,14 @@ const NoteItem = (props) => {
               style={{ cursor: "pointer" }}
               onClick={() => {
                 deleteNote(note._id);
-                props.showAlert("Deleted Successfully", "success"); //calling deleteNote in the noteState and passing id to it
+                props.showAlert("Deleted Successfully", "success");
               }}
-            ></MdDelete>
-            <MdModeEdit
-              onClick={handleShow}
-            ></MdModeEdit>
+            />
+            <MdModeEdit onClick={handleEdit} style={{cursor:"pointer"}}/>
           </div>
         </div>
       </div>
     </div>
-    </>
   );
 };
 
